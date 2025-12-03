@@ -73,15 +73,15 @@ def clean_content(text: str) -> str:
 
     return text.strip()
 
-
+# ファイル名専用タイトル
 def extract_title(heading: str) -> str:
     """'# 4 チェックシートの管理' → '4 チェックシートの管理'"""
     return heading.lstrip('#').strip()
 
-
+# Windowsファイル名専用文字置換
 def make_safe_filename(name: str) -> str:
     """Windows で使えない文字を置き換え"""
-    name = re.sub(r'[\\/*?:"<>|]', '＿', name)
+    name = re.sub(r'[\\/*?:"<>|]', '・', name)
     return name
 
 
